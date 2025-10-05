@@ -1,112 +1,137 @@
-/* Fonts and general setup */
 body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    background: linear-gradient(135deg, #c471ed, #f64f59, #12c2e9);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f0f0;
+  color: #222;
 }
 
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+/* Navigation */
+.navbar {
+  background-color: #f5f0f0;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.header h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3em;
-    color: #ffe1ff;
-    text-shadow: 0 0 15px #ffb3f6;
+.navbar li {
+  display: inline-block;
+  margin: 0 20px;
 }
 
-.header p {
-    font-size: 1.2em;
-    opacity: 0.9;
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-/* Sections */
-section {
-    padding: 40px 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+.navbar a:hover {
+  color: #a762b9;
 }
 
-h2 {
-    font-size: 2em;
-    color: #ffdbf8;
-    margin-bottom: 10px;
+/* Main layout */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  background-color: #fff;
 }
 
-/* Family and hobbies grid */
-.family-grid, .hobbies-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
+.text-content {
+  flex: 1;
+  min-width: 300px;
 }
 
-.family-member, .hobby-item {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 20px;
-    border-radius: 15px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
+.image-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
 }
 
-.family-member:hover, .hobby-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #fff;
+.image-content img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
 }
 
-.family-member i, .hobby-item i {
-    font-size: 2.5em;
-    color: #ffe1ff;
-    margin-bottom: 10px;
+/* Text styles */
+h1 {
+  font-size: 2.5em;
+  color: #2e2e2e;
 }
 
-/* Goals */
-.goals-list {
-    list-style: none;
-    padding: 0;
+.tagline {
+  color: #a762b9;
+  font-weight: 500;
+  margin-top: -10px;
 }
 
-.goals-list li {
-    background: rgba(255, 255, 255, 0.2);
-    margin: 10px auto;
-    max-width: 500px;
-    padding: 10px;
-    border-radius: 10px;
+.bio {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.hobbies li,
+.goals li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+.hobbies i {
+  color: #a762b9;
+  margin-right: 8px;
+}
+
+/* Social icons */
+.social {
+  margin-top: 20px;
+}
+
+.social a {
+  color: #555;
+  font-size: 1.5em;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: #a762b9;
 }
 
 /* Footer */
-.footer {
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #777;
+  background-color: #f5f0f0;
+  border-top: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.4);
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
+  }
 
-.footer a {
-    color: #ffb3f6;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
+  .text-content {
+    order: 2;
+  }
 
-.footer a:hover {
-    color: #fff;
+  .image-content {
+    order: 1;
+  }
 }
