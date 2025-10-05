@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const content = document.querySelectorAll('.text-content, .image-content');
+  const buttons = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
 
-  content.forEach((el, index) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // remove active state
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
 
-    setTimeout(() => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, index * 300);
+      // add active state to selected
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
   });
 });
