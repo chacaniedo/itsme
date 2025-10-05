@@ -1,12 +1,13 @@
-/* Basic reset + font */
-* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f5f0f0;
+  background: linear-gradient(135deg, #ffb6ec 0%, #b18bff 50%, #8ae3ff 100%);
   color: #222;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  background: url("kpop-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* Wrapper centers the card */
 .profile-wrapper {
@@ -53,6 +54,16 @@ body {
   object-fit: cover;
   display: block;
 }
+
+.profile-video {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  border: 3px solid #ff9ecb;
+  box-shadow: 0 6px 20px rgba(255, 170, 210, 0.5);
+  object-fit: cover;
+}
+
 
 /* Header */
 .profile-header h1 {
