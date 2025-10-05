@@ -1,137 +1,62 @@
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f0f0;
-  color: #222;
-}
-
-/* Navigation */
-.navbar {
-  background-color: #f5f0f0;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.navbar ul {
-  list-style: none;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.navbar li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-.navbar a {
-  text-decoration: none;
+body {
+  background-color: #fefefe;
   color: #333;
-  font-weight: 600;
-  transition: color 0.3s;
+  text-align: center;
+  padding: 20px;
 }
 
-.navbar a:hover {
-  color: #a762b9;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
 }
 
-/* Main layout */
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  gap: 40px;
-  max-width: 1000px;
+nav {
+  margin: 20px 0;
+}
+
+button {
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover, .active {
+  background-color: #005f8a;
+}
+
+main {
+  max-width: 600px;
   margin: 0 auto;
-  border: 1px solid #ddd;
-  background-color: #fff;
 }
 
-.text-content {
-  flex: 1;
-  min-width: 300px;
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.image-content {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.image-content img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-}
-
-/* Text styles */
-h1 {
-  font-size: 2.5em;
-  color: #2e2e2e;
-}
-
-.tagline {
-  color: #a762b9;
-  font-weight: 500;
-  margin-top: -10px;
-}
-
-.bio {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.hobbies li,
-.goals li {
-  list-style: none;
-  margin: 8px 0;
-}
-
-.hobbies i {
-  color: #a762b9;
-  margin-right: 8px;
-}
-
-/* Social icons */
-.social {
-  margin-top: 20px;
-}
-
-.social a {
-  color: #555;
-  font-size: 1.5em;
-  margin-right: 15px;
-  transition: color 0.3s;
-}
-
-.social a:hover {
-  color: #a762b9;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
-  color: #777;
-  background-color: #f5f0f0;
-  border-top: 1px solid #ccc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .profile-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .text-content {
-    order: 2;
-  }
-
-  .image-content {
-    order: 1;
-  }
+img {
+  margin-top: 15px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
