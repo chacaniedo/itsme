@@ -1,62 +1,149 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* Basic reset + font */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background-color: #fefefe;
-  color: #333;
-  text-align: center;
-  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f0f0;
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+/* Wrapper centers the card */
+.profile-wrapper {
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px);
 }
 
-nav {
-  margin: 20px 0;
+/* Card */
+.card {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border: 1px solid #e3dfdc;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  border-radius: 10px;
+  display: flex;
+  gap: 36px;
+  padding: 28px;
+  align-items: center;
 }
 
-button {
-  background-color: #0088cc;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Left column (content) */
+.left-col {
+  flex: 1 1 55%;
+  min-width: 260px;
 }
 
-button:hover, .active {
-  background-color: #005f8a;
+/* Right column (image) */
+.right-col {
+  flex: 1 1 40%;
+  min-width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-main {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.tab-content {
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.tab-content.active {
+.profile-image {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 8px;
+  border: 1px solid #e6e1df;
+  object-fit: cover;
   display: block;
-  opacity: 1;
-  transform: translateY(0);
 }
 
-img {
-  margin-top: 15px;
-  width: 150px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Header */
+.profile-header h1 {
+  font-size: 2.1rem;
+  color: #2e2e2e;
+  margin-bottom: 6px;
+}
+.subtitle {
+  color: #a762b9;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+/* Tab nav */
+.tab-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+  transition: all 200ms ease;
+}
+.tab-btn:hover { transform: translateY(-2px); }
+.tab-btn.active {
+  background: #f5eef6;
+  color: #7b3aa5;
+  border-color: #e9d4f0;
+}
+
+/* Tab panes */
+.tab-pane { display: none; opacity: 0; transform: translateY(8px); transition: all 260ms ease; }
+.tab-pane.active { display: block; opacity: 1; transform: translateY(0); margin-bottom: 12px; }
+
+.tab-pane h2 { font-size: 1.15rem; margin-bottom: 8px; color: #2d2d2d; }
+.tab-pane p { line-height: 1.5; color: #333; margin-bottom: 8px; }
+
+/* Lists inside panes */
+.family-list, .hobby-list, .goals-list {
+  list-style: none;
+  margin-top: 10px;
+}
+.family-list li, .hobby-list li, .goals-list li {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.family-list i, .hobby-list i { color: #a762b9; min-width: 18px; }
+
+/* Contact / social row */
+.contact-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-row a { color: #7b3aa5; text-decoration: none; font-weight: 600; }
+.social a { color: #444; margin-right: 12px; font-size: 1.05rem; transition: color 180ms; }
+.social a:hover { color: #a762b9; }
+
+/* Footer */
+.page-footer { text-align: center; color: #777; padding: 18px 10px; }
+
+/* --------------------------- */
+/* Responsive rules             */
+/* --------------------------- */
+@media (max-width: 900px) {
+  .card { gap: 20px; padding: 20px; }
+  .profile-image { max-width: 300px; }
+}
+
+@media (max-width: 700px) {
+  /* stack columns on mobile like the sample image (photo on top) */
+  .card {
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+  }
+  .left-col { order: 2; width: 100%; text-align: center; }
+  .right-col { order: 1; width: 100%; }
+  .tab-nav { justify-content: center; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+  .tab-btn { min-width: 88px; }
+  .tab-pane { text-align: left; }
+  .contact-row { justify-content: center; }
 }
