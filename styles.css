@@ -19,15 +19,15 @@ body {
 
 /* Card */
 .card {
-  width: 100%;
-  max-width: 1000px;
+  width: 95%;
+  max-width: 1300px;
   background: #fff;
   border: 1px solid #e3dfdc;
   box-shadow: 0 6px 18px rgba(0,0,0,0.04);
   border-radius: 10px;
   display: flex;
   gap: 36px;
-  padding: 28px;
+  padding: 40px;
   align-items: center;
 }
 
