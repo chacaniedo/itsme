@@ -35,7 +35,7 @@ body {
 /* Left column (content) */
 .left-col {
   flex: 1 1 55%;
-  min-width: 260px;
+  min-width: 300px;
 }
 
 /* Right column (image) */
