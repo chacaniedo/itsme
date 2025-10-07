@@ -22,10 +22,10 @@ body {
 .card {
   width: 95%;
   max-width: 1300px;
-  background: #fff;
-  border: 1px solid #e3dfdc;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-  border-radius: 10px;
+  background: #fef9ff;
+  border: 1px solid #e4ccff;
+  box-shadow: 0 6px 20px rgba(193, 139, 255, 0.25);
+  border-radius: 20px;
   display: flex;
   gap: 36px;
   padding: 40px;
