@@ -1,68 +1,160 @@
-/* 🌈 Background - K-pop dreamy gradient */
 body {
-  background: linear-gradient(135deg, #ff9ff3, #feca57, #48dbfb, #1dd1a1);
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffb6ec 0%, #b18bff 50%, #8ae3ff 100%);
+  color: #222;
+  background: url("kpop-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ✨ Gradient animation effect */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+
+/* Wrapper centers the card */
+.profile-wrapper {
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px);
 }
 
-/* 💜 Section headers like “Bio”, “Family”, “Goals”, “Hobbies” */
-h2 {
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 0 0 15px #ffb8f6, 0 0 25px #9b59b6;
-  margin-top: 20px;
-  transition: transform 0.3s;
+/* Card */
+.card {
+  width: 95%;
+  max-width: 1300px;
+  background: #fff;
+  border: 1px solid #e3dfdc;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  border-radius: 10px;
+  display: flex;
+  gap: 36px;
+  padding: 40px;
+  align-items: center;
 }
 
-h2:hover {
-  transform: scale(1.1);
+/* Left column (content) */
+.left-col {
+  flex: 1 1 55%;
+  min-width: 260px;
 }
 
-/* 🎥 K-pop video section */
-video {
-  width: 90%;
-  max-width: 600px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  margin: 20px auto;
+/* Right column (image) */
+.right-col {
+  flex: 1 1 40%;
+  min-width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 8px;
+  border: 1px solid #e6e1df;
+  object-fit: cover;
   display: block;
 }
 
-/* 💫 Add sparkle animation to clickable headers */
-section h2 {
+.profile-video {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  border: 3px solid #ff9ecb;
+  box-shadow: 0 6px 20px rgba(255, 170, 210, 0.5);
+  object-fit: cover;
+}
+
+
+/* Header */
+.profile-header h1 {
+  font-size: 2.1rem;
+  color: #2e2e2e;
+  margin-bottom: 6px;
+}
+.subtitle {
+  color: #a762b9;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+/* Tab nav */
+.tab-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  border-radius: 20px;
   cursor: pointer;
-  animation: glowPulse 2s infinite alternate;
+  font-weight: 600;
+  color: #444;
+  transition: all 200ms ease;
+}
+.tab-btn:hover { transform: translateY(-2px); }
+.tab-btn.active {
+  background: #f5eef6;
+  color: #7b3aa5;
+  border-color: #e9d4f0;
 }
 
-@keyframes glowPulse {
-  from { text-shadow: 0 0 10px #fff, 0 0 20px #feca57, 0 0 30px #ff9ff3; }
-  to { text-shadow: 0 0 20px #ff9ff3, 0 0 30px #48dbfb, 0 0 40px #1dd1a1; }
+/* Tab panes */
+.tab-pane { display: none; opacity: 0; transform: translateY(8px); transition: all 260ms ease; }
+.tab-pane.active { display: block; opacity: 1; transform: translateY(0); margin-bottom: 12px; }
+
+.tab-pane h2 { font-size: 1.15rem; margin-bottom: 8px; color: #2d2d2d; }
+.tab-pane p { line-height: 1.5; color: #333; margin-bottom: 8px; }
+
+/* Lists inside panes */
+.family-list, .hobby-list, .goals-list {
+  list-style: none;
+  margin-top: 10px;
+}
+.family-list li, .hobby-list li, .goals-list li {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.family-list i, .hobby-list i { color: #a762b9; min-width: 18px; }
+
+/* Contact / social row */
+.contact-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-row a { color: #7b3aa5; text-decoration: none; font-weight: 600; }
+.social a { color: #444; margin-right: 12px; font-size: 1.05rem; transition: color 180ms; }
+.social a:hover { color: #a762b9; }
+
+/* Footer */
+.page-footer { text-align: center; color: #777; padding: 18px 10px; }
+
+/* --------------------------- */
+/* Responsive rules             */
+/* --------------------------- */
+@media (max-width: 900px) {
+  .card { gap: 20px; padding: 20px; }
+  .profile-image { max-width: 300px; }
 }
 
-/* 📱 Make responsive */
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
+@media (max-width: 700px) {
+  /* stack columns on mobile like the sample image (photo on top) */
+  .card {
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
   }
-
-  video {
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  section {
-    padding: 10px;
-  }
+  .left-col { order: 2; width: 100%; text-align: center; }
+  .right-col { order: 1; width: 100%; }
+  .tab-nav { justify-content: center; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+  .tab-btn { min-width: 88px; }
+  .tab-pane { text-align: left; }
+  .contact-row { justify-content: center; }
 }
